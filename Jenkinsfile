@@ -17,7 +17,13 @@ pipeline {
                 echo '******************************'
             }
         }
- 
+         stage('Security') {
+            steps{
+                echo 'Security'
+                echo 'Security1'
+                echo '******************************'
+            }
+        }
         stage('Yarn Build') {
             steps {
                 echo 'Yarn Build'
@@ -25,13 +31,7 @@ pipeline {
             }
         }
  
-        stage('Security') {
-            steps{
-                echo 'Security'
-                echo 'Security1'
-                echo '******************************'
-            }
-        }
+
         stage('Deploy') {
             steps{
                 echo 'Deploy'
