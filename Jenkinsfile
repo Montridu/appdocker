@@ -28,6 +28,7 @@ pipeline {
         stage('Security') {
             steps{
                 echo 'Security'
+                echo 'Security1'
                 echo '******************************'
             }
         }
