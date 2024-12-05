@@ -25,6 +25,12 @@ pipeline {
             }
         }
  
+        stage('Security') {
+            steps{
+                echo 'Security'
+                echo '******************************'
+            }
+        }
         stage('Deploy') {
             steps{
                 echo 'Deploy'
