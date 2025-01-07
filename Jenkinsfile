@@ -32,7 +32,6 @@ pipeline {
             steps {
                 echo 'Yarn Build'
                 echo '******************************'
-               // sh 'docker build -t your-dockerhub-username/your-app-name .'
             }
         }
         stage('Deploy') {
