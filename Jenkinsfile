@@ -1,9 +1,8 @@
 pipeline {
-    
     agent any  
- 
+
     stages {
-          stage("code") {
+          stage("code clone") {
              steps {
                  git url: "https://github.com/Montridu/appdocker.git", branch: "main"
                  echo "Code cloned successfully"
@@ -13,9 +12,10 @@ pipeline {
             steps {
                 echo 'Init'
                 echo '******************************'
+                docker ps
             }
         }
- 
+
         stage('Yarn Install') {
             steps {
                 echo 'Yarn Install'
@@ -25,14 +25,14 @@ pipeline {
          stage('Security') {
             steps{
                 echo 'Security'
-                echo 'Security1'
                 echo '******************************'
             }
         }
-        stage('Yarn Build') {
+        stage('Yarn Build image') {
             steps {
                 echo 'Yarn Build'
                 echo '******************************'
+                sh 'docker build -t your-dockerhub-username/your-app-name .'
             }
         }
  
