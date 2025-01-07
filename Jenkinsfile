@@ -12,7 +12,7 @@ pipeline {
             steps {
                 echo 'Init'
                 echo '******************************'
-               // docker ps
+                sh 'echo Init'
             }
         }
 
