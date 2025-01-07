@@ -3,7 +3,12 @@ pipeline {
     agent any  
  
     stages {
- 
+          stage("code") {
+             steps {
+                 git url: "https://github.com/Montridu/appdocker.git", branch: "main"
+                 echo "Code cloned successfully"
+             }
+         }
         stage('Init'){
             steps {
                 echo 'Init'
