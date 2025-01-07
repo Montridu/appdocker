@@ -10,7 +10,7 @@ pipeline {
          }
          stage('Run Docker Command') {
             steps {
-                sh 'docker ps'
+                sh 'docker --version'
             }
         }
         stage('Init'){
