@@ -1,6 +1,7 @@
 pipeline {
     agent any  
-
+    environment {
+        PATH = "/usr/bin:/usr/local/bin:${env.PATH}"
     stages {
           stage("code clone") {
              steps {
@@ -10,7 +11,7 @@ pipeline {
          }
          stage('Run Docker Command') {
             steps {
-                sh 'docker --version'
+                sh 'docker ps'
             }
         }
         stage('Init'){
