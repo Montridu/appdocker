@@ -8,11 +8,15 @@ pipeline {
                  echo "Code cloned successfully"
              }
          }
+         stage('Run Docker Command') {
+            steps {
+                sh 'docker ps'
+            }
+        }
         stage('Init'){
             steps {
                 echo 'Init'
                 echo '******************************'
-                sh 'docker ps'
             }
         }
 
