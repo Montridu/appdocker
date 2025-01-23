@@ -6,7 +6,7 @@ pipeline {
     stages {
           stage("code clone") {
              steps {
-                 git url: "https://github.com/Montridu/appdocker.git", branch: "main"
+                 git branch: 'main', url: 'https://github.com/Montridu/appdocker.git', credentialsId: 'github-token'
                  echo "Code cloned successfully"
              }
          }
